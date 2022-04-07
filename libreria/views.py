@@ -29,4 +29,11 @@ def crear_libro(request):
         return render(request, 'crear_libro.html')
 
 
+def detalle_libro(request, id):
+    libro = Libro.objects.get(id=id)
+    context = {'libro': libro}
+    return render(request, 'libro_detalle.html', context)
+
+
+
 
