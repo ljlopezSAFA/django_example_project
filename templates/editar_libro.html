@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Libro</title>
+</head>
+<body>
+
+<form action="/libreria/libros/editar/{{libro.id}}" method="POST">
+
+    {% csrf_token %}
+
+    <label for="Id"> Id: </label>
+    <input id="id" type="number" name="id" disabled value="{{ libro.id}}">
+
+    <label for="Nombre"> Nombre: </label>
+    <input id="nombre" type="text" name="nombre" value="{{ libro.nombre}}">
+
+    <label for="Numero de Paginas"> Número de Páginas: </label>
+    <input id="num_paginas" type="number" name="num_paginas" value="{{ libro.num_paginas}}">
+
+    <label for="Fecha de Publicacion"> Fecha de Publicación: </label>
+    <input id="fecha" type="date" name="fecha" value="{{ libro.fecha_publicacion}}">
+
+    <input type="submit" value="Editar">
+
+</form>
+
+
+</body>
+</html>

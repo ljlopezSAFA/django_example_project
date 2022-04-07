@@ -8,7 +8,11 @@
 
 <p>ID: {{ libro.id }}</p>
 <p>Nombre: {{ libro.nombre }}</p>
+<p>Número de Páginas: {{ libro.num_paginas }}</p>
 <p>FECHA: {{ libro.fecha_publicacion }}</p>
+
+<a href="/libreria/libros/editar/{{ libro.id }}">Editar Libro</a>
+<a href="/libreria/libros/borrar/{{ libro.id }}">Borrar Libro</a>
 
 </body>
 </html>
