@@ -6,26 +6,25 @@
 </head>
 <body>
 
-    <form action="/libreria/libros/crear/" method="POST">
+<form action="/libreria/libros/crear/" method="POST">
 
-        {% csrf_token %}
+    {% csrf_token %}
 
-        <label for="Id"> Id: </label>
-        <input id="id" type="number" name="id" value="">
+    <label for="Id"> Id: </label>
+    <input id="id" type="number" name="id" value="">
 
-        <label for="Nombre"> Nombre: </label>
-        <input id="nombre" type="text" name="nombre" value="">
+    <label for="Nombre"> Nombre: </label>
+    <input id="nombre" type="text" name="nombre" value="">
 
-        <label for="Numero de Paginas"> Número de Páginas: </label>
-        <input id="num_paginas" type="number" name="num_paginas" value="">
+    <label for="Numero de Paginas"> Número de Páginas: </label>
+    <input id="num_paginas" type="number" name="num_paginas" value="">
 
-        <label for="Fecha de Publicacion"> Fecha de Publicación: </label>
-        <input id="fecha" type="date" name="fecha" value="">
+    <label for="Fecha de Publicacion"> Fecha de Publicación: </label>
+    <input id="fecha" type="date" name="fecha" value="">
 
-        <input type="submit" value="Crear">
+    <input type="submit" value="Crear">
 
-    </form>
-
+</form>
 
 
 </body>

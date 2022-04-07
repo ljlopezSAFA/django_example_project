@@ -6,21 +6,17 @@
 </head>
 <body>
 
-    <h1>Mis Libros</h1>
+<h1>Mis Libros</h1>
 
-    <ul>
-        {% for libro in libros %}
-
-
-        <li>{{ libro.nombre}}</li><a href="/libreria/libros/{{ libro.id }}">Detalle Libro</a>
-
-        {% endfor %}
-
-    </ul>
+<ul>
+    {% for libro in libros %}
 
 
+        <li>{{ libro.nombre }}</li><a href="/libreria/libros/{{ libro.id }}">Detalle Libro</a>
 
+    {% endfor %}
 
+</ul>
 
 
 </body>
