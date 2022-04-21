@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Crear Libro</title>
-</head>
-<body>
+{% include "header.html" %}
+
+{% block content %}
 
 <form action="/libreria/libros/editar/{{libro.id}}" method="POST">
 
@@ -27,5 +23,4 @@
 </form>
 
 
-</body>
-</html>
+{% endblock %}
