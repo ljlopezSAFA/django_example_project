@@ -3,13 +3,20 @@
 {% block content %}
 <body>
 
-<p>ID: {{ libro.id }}</p>
-<p>Nombre: {{ libro.nombre }}</p>
-<p>Número de Páginas: {{ libro.num_paginas }}</p>
-<p>FECHA: {{ libro.fecha_publicacion }}</p>
+<div class="mx-auto" style="align-items: center; align-content: center; align-self: center;">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://escuelaposgrado.es/wp-content/uploads/2014/10/Ediciones_Albores-img.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ libro.nombre }}</h5>
+            <p class="card-text">Número de Páginas: {{ libro.num_paginas }}</p>
+            <p class="card-text">Fecha Publicación: {{ libro.fecha_publicacion }}</p>
+            <a class="btn btn-primary" href="/libreria/libros/editar/{{ libro.id }}">Editar Libro</a>
+            <a class="btn btn-primary" href="/libreria/libros/borrar/{{ libro.id }}">Borrar Libro</a>
+        </div>
+    </div>
+</div>
 
-<a href="/libreria/libros/editar/{{ libro.id }}">Editar Libro</a>
-<a href="/libreria/libros/borrar/{{ libro.id }}">Borrar Libro</a>
+
 
 </body>
 {% endblock %}

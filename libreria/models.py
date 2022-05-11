@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Editorial(models.Model):
     id = models.IntegerField(primary_key=True)
     nombre = models.TextField(max_length=150)

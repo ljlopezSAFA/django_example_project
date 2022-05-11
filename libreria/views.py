@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import *
+from .forms import *
 
 
 # Create your views here.
@@ -27,6 +28,14 @@ def crear_libro(request):
         return redirect('/libreria/libros')
     else:
         return render(request, 'crear_libro.html')
+
+def crear_libro_form(request):
+    # Método para operación CRUD Crear nuevo libro
+    if request.method == 'POST':
+        return redirect('/libreria/libros')
+    else:
+        form_libro = Formulario_libro()
+        return render(request, 'crear_libro_form.html', {'formulario_libro': form_libro})
 
 
 def editar_libro(request,id):

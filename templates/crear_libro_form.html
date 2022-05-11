@@ -1,0 +1,16 @@
+{% include "header.html" %}
+
+{% block content %}
+
+    <div class="container" style="align-items: center">
+
+
+        <form action="/libreria/libros/crear/" method="POST">
+
+            {% csrf_token %}
+            {{ formulario_libro}}
+
+        </form>
+    </div>
+
+{% endblock %}
