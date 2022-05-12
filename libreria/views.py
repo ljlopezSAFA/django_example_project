@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
-from .forms import *
-
+from django.http import JsonResponse
+import requests
 
 # Create your views here.
 
@@ -28,15 +28,6 @@ def crear_libro(request):
         return redirect('/libreria/libros')
     else:
         return render(request, 'crear_libro.html')
-
-def crear_libro_form(request):
-    # Método para operación CRUD Crear nuevo libro
-    if request.method == 'POST':
-        return redirect('/libreria/libros')
-    else:
-        form_libro = Formulario_libro()
-        return render(request, 'crear_libro_form.html', {'formulario_libro': form_libro})
-
 
 def editar_libro(request,id):
     if request.method == "GET":
@@ -65,6 +56,22 @@ def borrar_libro(request,id):
     if libro is not None:
         Libro.delete(libro)
     return redirect('/libreria/libros')
+
+
+def get_datos_covid(request):
+    datos_covid = requests.get("https://api.covidtracking.com/v1/us/current.json").json()
+    positivos = datos_covid[0]["positive"]
+    hospitalizaciones = datos_covid[0]["hospitalizedCurrently"]
+    muertes = datos_covid[0]["death"]
+    return render(request, 'covid_detalle.html', {'positivos': positivos , 'hospitalizaciones': hospitalizaciones, 'muertes': muertes})
+
+
+
+
+
+def obtener_libros_json(requests):
+    libros = Libro.objects.all()
+    return JsonResponse(list(libros.values()), safe=False)
 
 
 

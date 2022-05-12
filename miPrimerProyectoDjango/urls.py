@@ -21,4 +21,5 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/libreria/inicio', permanent=True)),
     path('admin/', admin.site.urls),
     path('libreria/', include('libreria.urls')),
+    path('api/', include('libreria.apiurls')),
 ]
